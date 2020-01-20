@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Player</string>
+    <string name="adapter_text">Show Adapter</string>
+    <string name="title_activity_list">ListActivity</string>
+
+    <!--menus-->
+    <string name="menu_all">All</string>
+    <string name="menu_photos">Photos</string>
+    <string name="menu_videos">Videos</string>
+
+</resources>
