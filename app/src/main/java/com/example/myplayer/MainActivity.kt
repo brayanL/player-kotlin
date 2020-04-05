@@ -1,5 +1,6 @@
 package com.example.myplayer
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -9,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), Logger {
 
-    val adapter = MediaAdapter(MediaProvider.data) { (title) -> toast(title) }
+    val adapter = MediaAdapter(MediaProvider.data) { (id) -> navigateToDetail(id) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,14 @@ class MainActivity : AppCompatActivity(), Logger {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun navigateToDetail(id: Int) {
+        // startActivity()
+        val detailActivity = Intent(this, DetailActivity::class.java).apply {
+            putExtra(DetailActivity.ID, id)
+        }
+        startActivity(detailActivity)
     }
 }
 

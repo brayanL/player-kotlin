@@ -7,8 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.properties.Delegates
 
+// TypesAlias so great: https://kotlinlang.org/docs/reference/type-aliases.html
+typealias Listener = (MediaItem) -> Unit
+
 //MediaAdapter receive list of items and lambada function
-class MediaAdapter(items: List<MediaItem>, val listener: (MediaItem) -> Unit) :
+class MediaAdapter(items: List<MediaItem>, val listener: Listener) :
     RecyclerView.Adapter<MediaAdapter.ViewHolder>() {
 
     //if the items change notifyDataSetChanged is called
